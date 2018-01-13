@@ -1,0 +1,3 @@
+[submodule "player"]
+    path = player
+    url = git@github.com:elementnet/elementnet-player
