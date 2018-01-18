@@ -46,6 +46,9 @@ Escape this character via using @. Example (in PHP):
 Usage of this block:
 {set variable [lol] to ~@~@~} --> `$lol = '~@~@~'`
 */
+var $ = (jQuery = require('jquery'));
+require('jquery-ui');
+
 function queryMethod() {
     return window.location.href.substring(
         window.location.href.lastIndexOf('?') + 1

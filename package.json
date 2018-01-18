@@ -6,13 +6,19 @@
     "scripts": {
         "test": "node test.js",
         "start": "node index.js",
-        "build": "browserify index.js -o web.js && uglifyjs web.js -o web.min.js -c && cp editor.html index.html"
+        "build": "browserify index.js -o web.js && uglifyjs web.js -o web.min.js -c && uglifycss --output main.min.css main.css && cp editor.html index.html",
+        "server": "node server.js"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/elementnet/elementnet-editor.git"
     },
-    "keywords": ["html", "css", "js", "block"],
+    "keywords": [
+        "html",
+        "css",
+        "js",
+        "block"
+    ],
     "author": "ElementNetwork",
     "license": "Apache-2.0",
     "bugs": {
@@ -21,7 +27,14 @@
     "homepage": "https://github.com/elementnet/elementnet-editor#readme",
     "devDependencies": {
         "browserify": "^15.2.0",
+        "eslint": "^4.15.0",
+        "node-static": "^0.7.10",
         "prettier": "^1.10.2",
+        "stylelint": "^8.4.0",
         "uglify-js": "^3.3.7"
+    },
+    "dependencies": {
+        "jquery": "^3.2.1",
+        "jquery-ui": "^1.12.1"
     }
 }
