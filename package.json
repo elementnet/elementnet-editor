@@ -1,0 +1,27 @@
+{
+    "name": "elementnet-editor",
+    "version": "0.1.0",
+    "description": "A block-based HTML, CSS, and JS editor",
+    "main": "index.js",
+    "scripts": {
+        "test": "node test.js",
+        "start": "node index.js",
+        "build": "browserify index.js -o web.js && uglifyjs web.js -o web.min.js -c && cp editor.html index.html"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/elementnet/elementnet-editor.git"
+    },
+    "keywords": ["html", "css", "js", "block"],
+    "author": "ElementNetwork",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/elementnet/elementnet-editor/issues"
+    },
+    "homepage": "https://github.com/elementnet/elementnet-editor#readme",
+    "devDependencies": {
+        "browserify": "^15.2.0",
+        "prettier": "^1.10.2",
+        "uglify-js": "^3.3.7"
+    }
+}
