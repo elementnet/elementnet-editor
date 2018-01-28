@@ -46,22 +46,26 @@ Escape this character via using @. Example (in PHP):
 Usage of this block:
 {set variable [lol] to ~@~@~} --> `$lol = '~@~@~'`
 */
-var $ = (jQuery = require('jquery'));
-require('jquery-ui');
 
-function queryMethod() {
+/* global $ */
+
+$('#player-view').click(function() {
+    window.location = '/projects/player/#' + projectId;
+});
+
+function idMethod() {
     return window.location.href.substring(
-        window.location.href.lastIndexOf('?') + 1
+        window.location.href.lastIndexOf('#') + 1
     );
 }
-var projectId = queryMethod();
+var projectId = idMethod();
 if (projectId === window.location.href || projectId === '') {
     projectId = localStorage.length;
-    window.location.replace('?' + projectId);
+    window.location.replace('#' + projectId);
     localStorage[projectId] = { name: 'untitled' };
 } else {
     if (!localStorage[projectId]) {
-        window.location.replace('?');
+        window.location.replace('#');
         window.location.reload();
     }
 }

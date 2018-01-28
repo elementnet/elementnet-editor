@@ -9,7 +9,9 @@ License: Apache 2.0
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.3/jquery.min.js"></script>
         <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
         <link href="./main.min.css" type="text/css" rel="stylesheet" media="all" />
         <title>Project Editor &middot; ElementNetwork&trade;</title>
     </head>
@@ -19,9 +21,6 @@ License: Apache 2.0
         </div>
         <div id="ctrl-btns">
             <a href="javascript:void(0)" id="player-view">Preview in player!</a>
-            <script>
-                $('#player-view').click(function() {window.location = "/projects/player/#" + projectId})
-            </script>
         </div>
         <br />
         <ul id="file-options"></ul>
