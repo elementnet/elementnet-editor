@@ -24,9 +24,9 @@ Input types:
 %s - string
 %b - true/false/null/undefined
 %n - number
-%m.<menu name in menus var> - dropdown
-%t.<menu name in menus var> - dropdown/string
-%d.<menu name in menus var> - dropdown/number
+%m.<menu name in fileMenus var> - dropdown
+%t.<menu name in fileMenus var> - dropdown/string
+%d.<menu name in fileMenus var> - dropdown/number
 To create variating code, there is a small subset of JavaScript available (surrounded by ~ symbols)
 The bool?ifTrue/bool?iftrue:ifFalse operators
 The +, -, *, and / operators
@@ -110,23 +110,23 @@ $('.menuitem').click(function(event) {
         window.location.reload();
     }
 });
-var menus = { file: {}, edit: {}, share: {} };
-menus.file.toggle = false;
-menus.edit.toggle = false;
-menus.share.toggle = false;
-menus.done = true;
+var fileMenus = { file: {}, edit: {}, share: {} };
+fileMenus.file.toggle = false;
+fileMenus.edit.toggle = false;
+fileMenus.share.toggle = false;
+fileMenus.done = true;
 $('#file-menu').click(function() {
-    if (menus.done) {
-        menus.done = false;
-        if (!menus.file.toggle) {
-            menus.file.toggle = true;
-            if (menus.edit.toggle) {
+    if (fileMenus.done) {
+        fileMenus.done = false;
+        if (!fileMenus.file.toggle) {
+            fileMenus.file.toggle = true;
+            if (fileMenus.edit.toggle) {
                 $(editMenu).slideUp();
                 setTimeout(function() {
                     $(fileMenu).slideDown();
                 }, 400);
-            } else if (menus.share.toggle) {
-                menus.share.toggle = false;
+            } else if (fileMenus.share.toggle) {
+                fileMenus.share.toggle = false;
                 $(shareMenu).slideUp();
                 setTimeout(function() {
                     $(fileMenu).slideDown();
@@ -135,25 +135,25 @@ $('#file-menu').click(function() {
                 $(fileMenu).slideDown();
             }
         } else {
-            menus.file.toggle = false;
+            fileMenus.file.toggle = false;
             $(fileMenu).slideUp();
         }
-        menus.done = true;
+        fileMenus.done = true;
     }
 });
 $('#edit-menu').click(function() {
-    if (menus.done) {
-        menus.done = false;
-        if (!menus.edit.toggle) {
-            menus.edit.toggle = true;
-            if (menus.file.toggle) {
-                menus.file.toggle = false;
+    if (fileMenus.done) {
+        fileMenus.done = false;
+        if (!fileMenus.edit.toggle) {
+            fileMenus.edit.toggle = true;
+            if (fileMenus.file.toggle) {
+                fileMenus.file.toggle = false;
                 $(fileMenu).slideUp();
                 setTimeout(function() {
                     $(editMenu).slideDown();
                 }, 400);
-            } else if (menus.share.toggle) {
-                menus.share.toggle = false;
+            } else if (fileMenus.share.toggle) {
+                fileMenus.share.toggle = false;
                 $(shareMenu).slideUp();
                 setTimeout(function() {
                     $(editMenu).slideDown();
@@ -162,10 +162,10 @@ $('#edit-menu').click(function() {
                 $(editMenu).slideDown();
             }
         } else {
-            menus.edit.toggle = false;
+            fileMenus.edit.toggle = false;
             $(editMenu).slideUp();
         }
-        menus.done = true;
+        fileMenus.done = true;
     }
 });
 function updatePreview(html) {
