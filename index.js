@@ -1,8 +1,8 @@
 /*
-ElementNet Block Engine
-Copyright (c) 2017 ElementNetwork
-License: Apache 2.0
-*/
+ * ElementNet Block Engine
+ * Copyright (c) 2017 ElementNetwork
+ * License: Apache 2.0
+ */
 
 /*
 HOW TO CREATE BLOCKS
