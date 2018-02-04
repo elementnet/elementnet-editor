@@ -3,6 +3,10 @@
     "version": "0.1.0",
     "description": "A block-based HTML, CSS, and JS editor",
     "main": "index.js",
+    "engines": {
+        "node": ">=4",
+        "npm": ">=5"
+    },
     "scripts": {
         "test": "node test.js",
         "start": "node index.js",
