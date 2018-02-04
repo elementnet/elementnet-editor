@@ -6,7 +6,7 @@
     "engines": {
         "node": ">=4",
         "npm": ">=5"
-    }
+    },
     "scripts": {
         "test": "node test.js",
         "start": "node index.js",
