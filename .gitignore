@@ -56,8 +56,3 @@ typings/
 
 # dotenv environment variables file
 .env
-
-# build files
-index.html
-web.min.js
-main.min.css
