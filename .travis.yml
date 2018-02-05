@@ -1,6 +1,8 @@
 language: node_js
+node_js:
+ - node
+ - lts/*
 before_install: 
-  - nvm install node
   - npm install -g browserify
   - npm install -g uglifycss
   - npm install -g uglify-js
@@ -14,3 +16,5 @@ deploy:
   commiter-from-gh: true
   on:
     branch: master
+    node_js: lts/*
+  
