@@ -1,6 +1,6 @@
 {
     "name": "elementnet-editor",
-    "version": "0.1.1",
+    "version": "0.1.0",
     "description": "A block-based HTML, CSS, and JS editor",
     "main": "index.js",
     "engines": {
