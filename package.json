@@ -10,7 +10,7 @@
     "scripts": {
         "test": "node test.js",
         "start": "node index.js",
-        "build": "uglifyjs index.js -o web.min.js -c && uglifycss --output main.min.css main.css && cp editor.html index.html",
+        "post-install": "uglifyjs index.js -o web.min.js -c && uglifycss --output main.min.css main.css && cp editor.html index.html",
         "server": "node server.js"
     },
     "repository": {
