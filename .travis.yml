@@ -4,7 +4,7 @@ script: true
 deploy:
   provider: pages
   skip-cleanup: true
-  github-token: $GITHUB_TOKEN
+  github-token: $GH_TOKEN
   commiter-from-gh: true
   on:
     branch: master
