@@ -6,10 +6,6 @@
 
 /* global $ */
 
-$('#player-view').click(function() {
-    window.location = '/projects/player/#' + projectId;
-});
-
 function idMethod() {
     return window.location.href.substring(
         window.location.href.lastIndexOf('#') + 1
