@@ -17,4 +17,4 @@ npm install && npm start
 
 Then, navigate to <http://localhost:8080/>.
 
-If it's already cloned, just run `npm rebuild && npm start`.
+If it's already cloned, just run `npm run rebuild && npm start`.

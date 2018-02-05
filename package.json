@@ -10,18 +10,15 @@
     "scripts": {
         "test": "node test.js",
         "start": "node server.js",
-        "postinstall": "uglifyjs index.js -o web.min.js -c && uglifycss --output main.min.css main.css && cp editor.html index.html && echo Building Completed"
+        "postinstall":
+            "uglifyjs app/modals/editorModal.js app/controllers/editorController.js -o build/web.min.js -c && uglifycss --output build/main.min.css app/views/editorStyle.css && cp app/views/editorView.html build/index.html",
+        "rebuild": "npm run postinstall"
     },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/elementnet/elementnet-editor.git"
     },
-    "keywords": [
-        "html",
-        "css",
-        "js",
-        "block"
-    ],
+    "keywords": ["html", "css", "js", "block"],
     "author": "ElementNetwork",
     "license": "Apache-2.0",
     "bugs": {
