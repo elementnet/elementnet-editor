@@ -9,9 +9,8 @@
     },
     "scripts": {
         "test": "node test.js",
-        "start": "node index.js",
-        "postinstall": "uglifyjs index.js -o web.min.js -c && uglifycss --output main.min.css main.css && cp editor.html index.html && echo Building Completed",
-        "server": "node server.js"
+        "start": "node server.js",
+        "postinstall": "uglifyjs index.js -o web.min.js -c && uglifycss --output main.min.css main.css && cp editor.html index.html && echo Building Completed"
     },
     "repository": {
         "type": "git",
