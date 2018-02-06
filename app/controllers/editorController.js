@@ -69,7 +69,7 @@ function Block(type, spec, text, category, descriptor) {
 Block.prototype.render = function() {
     return this;
 };
-Block.prototype.execute = function(whenDone) {
+Block.prototype.execute = function(whenDone, ...inputs) {
     var bunch = [],
         codeLength = this.descriptor.code.length,
         currentBunch = '',
@@ -79,17 +79,16 @@ Block.prototype.execute = function(whenDone) {
         j = null,
         k = 0,
         parsed = '',
-        tempBunch = [],
-        tempBunchCurrent = '',
         unparsed = this.descriptor.code;
     for (; i < codeLength; i++) {
         j = unparsed[i];
         currentChar = j;
         if (inBunch && currentChar === '~') {
             inBunch = false;
-            for (; k < currentBunch.length; k++) {
-                // Left empty for later use
-            }
+            bunch.append((currentBunch) => {
+                let modBunch = currentBunch.replace(/nbTilde/g, '~');
+                // Unfinished
+            })
         } else if (currentChar === '~') {
             inBunch = true;
             bunch.append(currentBunch);
