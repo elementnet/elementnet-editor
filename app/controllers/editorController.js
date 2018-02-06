@@ -86,7 +86,7 @@ Block.prototype.execute = function(whenDone, ...inputs) {
         currentChar = j;
         if (inBunch && currentChar === '~') {
             inBunch = false;
-            bunch.append((currentBunch) => {
+            bunch.push((currentBunch) => {
                 let modBunch = currentBunch.replace(/nbTilde/g, '~');
                 let inputsReqd = modBunch.match(/\$inputs\[\d+\]/g);
                 let currentInput, $inputs = inputs;
@@ -98,7 +98,7 @@ Block.prototype.execute = function(whenDone, ...inputs) {
             })
         } else if (currentChar === '~') {
             inBunch = true;
-            bunch.append(currentBunch);
+            bunch.push(currentBunch);
             currentBunch = '';
         } else {
             currentBunch += currentChar;
