@@ -36,7 +36,7 @@
         "prettier": "^1.10.2",
         "prettier-eslint": "^8.8.1",
         "stylelint": "^8.4.0",
-        "uglify-js": "^3.3.7"
+        "uglify-es": "^3.3.9"
     },
     "dependencies": {
         "jszip": "^3.1.5"
