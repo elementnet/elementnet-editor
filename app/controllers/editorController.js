@@ -72,7 +72,7 @@ Block.prototype.render = function() {
 };
 Block.prototype.execute = function(whenDone, ...inputs) {
     var bunch = [],
-        codeLength = this.descriptor.code.length,
+        codeLength = this.desc.code.length,
         currentBunch = '',
         currentChar = '',
         i = 0,
@@ -80,7 +80,7 @@ Block.prototype.execute = function(whenDone, ...inputs) {
         j = null,
         k = 0,
         parsed = '',
-        unparsed = this.descriptor.code;
+        unparsed = this.desc.code;
     for (; i < codeLength; i++) {
         j = unparsed[i];
         currentChar = j;
