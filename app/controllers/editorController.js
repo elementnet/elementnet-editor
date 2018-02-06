@@ -31,11 +31,12 @@ To create variating code, you can use JavaScript (surrounded by ~ symbols)
 Here are some other things you can do using this:
 nbTilde - Returns a non-breaking tilde
 $inputs - An array of inputs
+By using strings, you can avoid inputs from being executed
 
 Note how these don't return values to your code. For example, you would have to do this:
 
 (new Block('', 'setVarToTilde', 'set variable %s to tilde', 'Data' {
-    code: '~$inputs[0]~ = "~nbTilde~"', // Notice the quotes
+    code: '~"$inputs[0]"~ = "~"nbTilde"~"', // Notice the quotes
     hidden: false,
     movable: true
 }).render();
@@ -87,7 +88,13 @@ Block.prototype.execute = function(whenDone, ...inputs) {
             inBunch = false;
             bunch.append((currentBunch) => {
                 let modBunch = currentBunch.replace(/nbTilde/g, '~');
-                // Unfinished
+                let inputsReqd = modBunch.match(/\$inputs\[\d+\]/g);
+                let currentInput, $inputs = inputs;
+                for (let i = 0; i < inputsReqd.length; i++) {
+                    currentInput = inputsReqd[i];
+                    modBunch = modBunch.replace(currentInput, eval(currentInput));
+                }
+                return eval(modBunch);
             })
         } else if (currentChar === '~') {
             inBunch = true;
