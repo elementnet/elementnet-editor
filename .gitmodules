@@ -1,0 +1,3 @@
+[submodule "player"]
+    path = lib/player
+    url = https://github.com/elementnet/elementnet-player.git

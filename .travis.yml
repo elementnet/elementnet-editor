@@ -1,0 +1,20 @@
+language: node_js
+node_js:
+ - node
+ - lts/*
+before_install: 
+  - npm install -g browserify
+  - npm install -g uglifycss
+  - npm install -g uglify-js
+install: npm install
+before_script: cp -a build/. ./
+script: true
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GH_TOKEN
+  commiter-from-gh: true
+  on:
+    branch: master
+    node_js: lts/*
+  
