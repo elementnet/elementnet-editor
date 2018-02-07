@@ -7,7 +7,7 @@ before_install:
   - npm install -g uglifycss
   - npm install -g uglify-es
 install: npm install
-after_install: cp -R build/ ./
+before_script: cp -a build/. ./
 script: true
 deploy:
   provider: pages
