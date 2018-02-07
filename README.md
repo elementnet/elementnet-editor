@@ -7,7 +7,7 @@
 
 ## Running Locally
 
-**Note: uglify-js, uglifycss, and browserify need to be installed globally.** (`npm i -g <packagename>`)
+**Note: uglify-es, uglifycss, and browserify need to be installed globally.** (`npm i -g <packagename>`)
 
 ```sh
 git clone --recursive git@github.com:elementnet/elementnet-editor
